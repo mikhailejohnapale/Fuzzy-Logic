@@ -4,7 +4,7 @@ class Fuzzifier:
     fuzzy_val = []
 
     def __init__(self, input_, label):
-        self.input_ = input_
+        self.crisp_input = input_
         self.label = label
 
     def getFuzzy(self):
