@@ -1,5 +1,22 @@
 class TrafficCongestion:
-    rules = []
+    rules = [
+        [["density", "low"], ["velocity", "very low"], ["low"]],
+        [["density", "medium"], ["velocity", "very slow"], ["moderate"]],
+        [["density", "high"], ["velocity", "very slow"], ["high"]],
+        [["density", "very high"], ["velocity", "very slow"], ["high"]],
+        [["density", "low"], ["velocity", "slow"], ["low"]],
+        [["density", "medium"], ["velocity", "slow"], ["low"]],
+        [["density", "high"], ["velocity", "slow"], ["moderate"]],
+        [["density", "very high"], ["velocity", "slow"], ["high"]],
+        [["density", "low"], ["velocity", "medium"], ["free"]],
+        [["density", "medium"], ["velocity", "medium"], ["low"]],
+        [["density", "high"], ["velocity", "medium"], ["moderate"]],
+        [["density", "very high"], ["velocity", "medium"], ["moderate"]],
+        [["density", "low"], ["velocity", "fast"], ["free"]],
+        [["density", "medium"], ["velocity", "fast"], ["free"]],
+        [["density", "high"], ["velocity", "fast"], ["low"]],
+        [["density", "very high"], ["velocity", "fast"], ["moderate"]],
+    ]
     velocitySet = [
         [
             "very slow", 0, 0.4], [
