@@ -9,7 +9,6 @@ class Inference:
         self.rules = rules
 
     def getActivatedRules(self):
-        pass
 
     def inferMamdani(self):
         pass
