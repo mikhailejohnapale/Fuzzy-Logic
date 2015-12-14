@@ -1,5 +1,7 @@
 from fuzzifier import *
 from trafficCongestion import *
+from inference import *
+from defuzzifier import *
 
 
 class FuzzyLogic:
@@ -15,7 +17,16 @@ class FuzzyLogic:
         self.fuzzyVal[1] = Fuzzifier(self.input_[1],
                                      TrafficCongestion().getVelocitySet()
                                      ).getFuzzy()
-        return self.fuzzyVal
+        self.mamdaniResult = {
+            Inference(
+                self.fuzzyVal,
+                TrafficCongestion().getRules()).inferMamdani()}
+        self.ouput = {
+            Defuzzifier(
+                TrafficCongestion().getCongestionSet(),
+                self.mamdaniResult).getCentroid()}
+
+        return self.ouput
 
 
 print(FuzzyLogic([0.3, 0.6]).getResult())

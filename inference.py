@@ -8,7 +8,5 @@ class Inference:
         self.fuzzy_val = fuzzy_val
         self.rules = rules
 
-    def getActivatedRules(self):
-
     def inferMamdani(self):
         pass
