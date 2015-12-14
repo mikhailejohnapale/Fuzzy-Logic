@@ -10,7 +10,12 @@ class FuzzyLogic:
         self.input_ = input_
 
     def getResult(self):
-        self.fuzzyVal = [[], []]
+        """
+        self.fuzzyVal stores a list  dictionary of fuzzy values.
+        self.mamdaniResult stores a dictionary of of result from inference.
+        self.ouput stores the crisp ouput from defuzzifier.
+        """
+        self.fuzzyVal = [{}, {}]
         self.fuzzyVal[0] = Fuzzifier(self.input_[0],
                                      TrafficCongestion().getDensitySet()
                                      ).getFuzzy()
@@ -27,6 +32,3 @@ class FuzzyLogic:
                 self.mamdaniResult).getCentroid()}
 
         return self.ouput
-
-
-print(FuzzyLogic([0.3, 0.6]).getResult())
