@@ -25,19 +25,18 @@ class Fuzzifier:
             value = max(min(((self.crisp_input - b[0]) / (b[1] - b[0])),
                             ((b[2] - self.crisp_input) / (b[2] - b[1]))), 0)
             self.fuzzy_val.update({a: round(value, 2)})
-        print(self.fuzzy_val)
 
-velocitySet = {
-    "very slow": [0, 0.2, 0.4],
-    "slow": [0.2, 0.4, 0.6],
-    "moderate": [0.4, 0.6, 0.8],
-    "fast": [0.6, 0.8, 1]}
+# velocitySet = {
+#     "very slow": [0, 0.2, 0.4],
+#     "slow": [0.2, 0.4, 0.6],
+#     "moderate": [0.4, 0.6, 0.8],
+#     "fast": [0.6, 0.8, 1]}
 
-densitySet = {
-    "low": [0, 0.2, 0.4],
-    "moderate": [0.2, 0.4, 0.6],
-    "high": [0.4, 0.6, 0.8],
-    "very high": [0.6, 0.8, 1]}
+# densitySet = {
+#     "low": [0, 0.2, 0.4],
+#     "moderate": [0.2, 0.4, 0.6],
+#     "high": [0.4, 0.6, 0.8],
+#     "very high": [0.6, 0.8, 1]}
 
-Fuzzifier(0.6, velocitySet).getFuzzy()
-Fuzzifier(0.3, densitySet).getFuzzy()
+# Fuzzifier(0.6, velocitySet).getFuzzy()
+# Fuzzifier(0.3, densitySet).getFuzzy()
