@@ -22,13 +22,23 @@ class FuzzyLogic:
         self.fuzzyVal[1] = Fuzzifier(self.input_[1],
                                      TrafficCongestion().getVelocitySet()
                                      ).getFuzzy()
-        self.mamdaniResult = {
-            Inference(
-                self.fuzzyVal,
-                TrafficCongestion().getRules()).inferMamdani()}
+
+        #Inference(self.fuzzyVal, TrafficCongestion().getRules()).inferMamdani()
+
+        # return self.fuzzyVal
+
+        self.mamdaniResult = Inference(
+            self.fuzzyVal,
+            TrafficCongestion().getRules()).inferMamdani()
+
+        return self.mamdaniResult
+        """
         self.ouput = {
             Defuzzifier(
                 TrafficCongestion().getCongestionSet(),
                 self.mamdaniResult).getCentroid()}
 
-        return self.ouput
+        return self.ouput"""
+x = FuzzyLogic([0.3, 0.6]).getResult()
+for list in x:
+    print(list, '\n')
