@@ -1,22 +1,23 @@
 class TrafficCongestion:
     rules = [
         [{"low": 0}, {"very low": 0}, {"low": 0}],
-        [{"medium": 0, "very slow": 0, "moderate": 0}],
-        [{"high": 0, "very slow": 0, "high": 0}],
-        [{"very high": 0, "very slow": 0, "high": 0}],
-        [{"low": 0, "slow": 0, "low": 0}],
-        [{"medium": 0, "slow": 0, "low": 0}],
-        [{"high": 0, "slow": 0, "moderate": 0}],
-        [{"very high": 0, "slow": 0, "high": 0}],
-        [{"low": 0, "medium": 0, "free": 0}],
-        [{"medium": 0, "medium": 0, "low": 0}],
-        [{"high": 0, "medium": 0, "moderate": 0}],
-        [{"very high": 0, "medium": 0, "moderate": 0}],
-        [{"low": 0, "fast": 0, "free": 0}],
-        [{"medium": 0, "fast": 0, "free": 0}],
-        [{"high": 0, "fast": 0, "low": 0}],
-        [{"very high": 0, "fast": 0, "moderate": 0}]
+        [{"moderate": 0}, {"very slow": 0}, {"moderate": 0}],
+        [{"high": 0}, {"very slow": 0}, {"high": 0}],
+        [{"very high": 0}, {"very slow": 0}, {"high": 0}],
+        [{"low": 0}, {"slow": 0}, {"low": 0}],
+        [{"moderate": 0}, {"slow": 0}, {"low": 0}],
+        [{"high": 0}, {"slow": 0}, {"moderate": 0}],
+        [{"very high": 0}, {"slow": 0}, {"high": 0}],
+        [{"low": 0}, {"moderate": 0}, {"free": 0}],
+        [{"moderate": 0}, {"moderate": 0}, {"low": 0}],
+        [{"high": 0}, {"moderate": 0}, {"moderate": 0}],
+        [{"very high": 0}, {"moderate": 0}, {"moderate": 0}],
+        [{"low": 0}, {"fast": 0}, {"free": 0}],
+        [{"moderate": 0}, {"fast": 0}, {"free": 0}],
+        [{"high": 0}, {"fast": 0}, {"low": 0}],
+        [{"very high": 0}, {"fast": 0}, {"moderate": 0}]
     ]
+
     velocitySet = {
         "very slow": [0, 0.2, 0.4],
         "slow": [0.2, 0.4, 0.6],
@@ -48,6 +49,3 @@ class TrafficCongestion:
 
     def getCongestionSet(self):
         return self.congestionSet
-
-
-print(TrafficCongestion.rules[0][2])
