@@ -21,6 +21,7 @@ class Fuzzifier:
         # (x = input,a,b,c) feet and peak
         # max(min((x - a) / (b - a), (c - x) / (c - b)), 0)
         # max(min(((x - a) / (b - a)), 1, ((d - x) / (d - c))), 0)
+        # adjust calculations to fit trapezoid function
         self.fuzzy_val = {}
         for a, b in self.subset.items():
             value = max(min(((self.crisp_input - b[0]) / (b[1] - b[0])),
