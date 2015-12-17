@@ -24,26 +24,41 @@ class Fuzzifier:
         # adjust calculations to fit trapezoid function
         self.fuzzy_val = {}
         for a, b in self.subset.items():
-            value = max(min(((self.crisp_input - b[0]) / (b[1] - b[0])),
+            if b[3] == 1:
+                if b[4] == 0:
+                    a1 = -0.4
+                    b1 = -0.2
+                    value = max(
+                        min(((self.crisp_input - a1) / (b1 - a1)), 1,
                             ((b[2] - self.crisp_input) / (b[2] - b[1]))), 0)
+                else:
+                    c1 = 1.2
+                    d1 = 1.4
+                    value = max(
+                        min(((self.crisp_input - b[0]) / (b[1] - b[0])), 1,
+                            ((d1 - self.crisp_input) / (d1 - c1))), 0)
+            else:
+                value = max(min(((self.crisp_input -
+                                  b[0]) / (b[1] - b[0])), ((b[2] -
+                                                            self.crisp_input) /
+                                                           (b[2] - b[1]))), 0)
             self.fuzzy_val.update({a: round(value, 2)})
 
     def Test(self):
         return self.fuzzy_val, self.subset
 velocitySet = {
-    "very slow": [0, 0.2, 0.4],
-    "slow": [0.2, 0.4, 0.6],
-    "moderate": [0.4, 0.6, 0.8],
-    "fast": [0.6, 0.8, 1]}
-
+    "very slow": [0, 0.2, 0.4, 1, 0],
+    "slow": [0.2, 0.4, 0.6, 0, 0],
+    "moderate": [0.4, 0.6, 0.8, 0, 0],
+    "fast": [0.6, 0.8, 1, 1, 1]}
 densitySet = {
-    "low": [0, 0.2, 0.4],
-    "moderate": [0.2, 0.4, 0.6],
-    "high": [0.4, 0.6, 0.8],
-    "very high": [0.6, 0.8, 1]}
+    "low": [0, 0.2, 0.4, 1, 0],
+    "moderate": [0.2, 0.4, 0.6, 0, 0],
+    "high": [0.4, 0.6, 0.8, 0, 0],
+    "very high": [0.6, 0.8, 1, 1, 1]}
 
-v = Fuzzifier(0, velocitySet)
-d = Fuzzifier(0, densitySet)
+v = Fuzzifier(1.1, velocitySet)
+d = Fuzzifier(1.1, densitySet)
 v.getFuzzy()
 d.getFuzzy()
 print(v.Test())
