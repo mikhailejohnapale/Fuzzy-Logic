@@ -1,13 +1,8 @@
 class Inference:
-    rules = []
-    fuzzy_val = []
-    activated_rules = []
-    mamdani_result = {}
 
     def __init__(self, fuzzy_val, rules):
         self.fuzzy_val = fuzzy_val
         self.rules = rules
-        Inference.rules = rules
 
     def inferMamdani(self):
         for i in range(len(self.rules)):

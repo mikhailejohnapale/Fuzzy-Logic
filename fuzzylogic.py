@@ -40,5 +40,7 @@ class FuzzyLogic:
 
         return self.ouput"""
 x = FuzzyLogic([0.3, 0.6]).getResult()
+i = 1
 for list in x:
-    print(list, '\n')
+    print(i, list, '\n')
+    i = i + 1

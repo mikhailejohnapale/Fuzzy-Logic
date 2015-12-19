@@ -57,8 +57,8 @@ densitySet = {
     "high": [0.4, 0.6, 0.8, 0, 0],
     "very high": [0.6, 0.8, 1, 1, 1]}
 
-v = Fuzzifier(1.1, velocitySet)
-d = Fuzzifier(1.1, densitySet)
+v = Fuzzifier(0.6, velocitySet)
+d = Fuzzifier(0.3, densitySet)
 v.getFuzzy()
 d.getFuzzy()
 print(v.Test())
