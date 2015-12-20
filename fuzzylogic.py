@@ -23,15 +23,10 @@ class FuzzyLogic:
                                      TrafficCongestion().getVelocitySet()
                                      ).getFuzzy()
 
-        #Inference(self.fuzzyVal, TrafficCongestion().getRules()).inferMamdani()
-
-        # return self.fuzzyVal
-
         self.mamdaniResult = Inference(
             self.fuzzyVal,
             TrafficCongestion().getRules()).inferMamdani()
 
-        return self.mamdaniResult
         """
         self.ouput = {
             Defuzzifier(
@@ -39,7 +34,7 @@ class FuzzyLogic:
                 self.mamdaniResult).getCentroid()}
 
         return self.ouput"""
-x = FuzzyLogic([0.3, 0.6]).getResult()
+x = FuzzyLogic([0.6, 0.43]).getResult()
 i = 1
 for list in x:
     print(i, list, '\n')
