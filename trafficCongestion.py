@@ -1,6 +1,6 @@
 class TrafficCongestion:
     rules = [
-        [{"low": 0}, {"very low": 0}, {"low": 0}],
+        [{"low": 0}, {"very slow": 0}, {"low": 0}],
         [{"moderate": 0}, {"very slow": 0}, {"moderate": 0}],
         [{"high": 0}, {"very slow": 0}, {"high": 0}],
         [{"very high": 0}, {"very slow": 0}, {"high": 0}],
