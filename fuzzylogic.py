@@ -34,8 +34,3 @@ class FuzzyLogic:
                 self.mamdaniResult).getCentroid()}
 
         return self.ouput"""
-x = FuzzyLogic([0.6, 0.43]).getResult()
-i = 1
-for list in x:
-    print(i, list, '\n')
-    i = i + 1
