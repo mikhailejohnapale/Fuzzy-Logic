@@ -27,10 +27,10 @@ class FuzzyLogic:
             self.fuzzyVal,
             TrafficCongestion().getRules()).inferMamdani()
 
-        """
-        self.ouput = {
-            Defuzzifier(
-                TrafficCongestion().getCongestionSet(),
-                self.mamdaniResult).getCentroid()}
+        self.ouput = Defuzzifier(
+            TrafficCongestion().getCongestionSet(),
+            self.mamdaniResult).getCentroid()
 
-        return self.ouput"""
+        return self.ouput
+
+print(FuzzyLogic([0.8, 0.5]).getResult())
