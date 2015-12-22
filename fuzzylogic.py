@@ -32,3 +32,9 @@ class FuzzyLogic:
             self.mamdaniResult).getCentroid()
 
         return self.ouput
+
+    def getFuzzyValue(self):
+        return self.fuzzyVal
+
+    def getMamdaniResult(self):
+        return self.mamdaniResult
