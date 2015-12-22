@@ -8,7 +8,6 @@ class Fuzzifier:
         # call detSubset and geTriMf and store it in fuzzy_val
         self.detSubset()
         self.getTriMf()
-        self.printValues()
         return self.fuzzy_val
 
     def detSubset(self):
@@ -46,7 +45,8 @@ class Fuzzifier:
                                                            (b[2] - b[1]))), 0)
             self.fuzzy_val.update({a: round(value, 2)})
 
-    def printValues(self):
-        print('Input -->', self.crisp_input)
-        print('Subsets -->', self.subset)
-        print('Fuzzy value -->', self.fuzzy_val)
+    def getInput(self):
+        return self.crisp_input
+
+    def getDetSubset(self):
+        return self.subset

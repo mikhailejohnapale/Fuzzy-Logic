@@ -1,22 +1,5 @@
 class TrafficCongestion:
-    rules = [
-        [{"low": 0}, {"very slow": 0}, {"low": 0}],
-        [{"moderate": 0}, {"very slow": 0}, {"moderate": 0}],
-        [{"high": 0}, {"very slow": 0}, {"high": 0}],
-        [{"very high": 0}, {"very slow": 0}, {"high": 0}],
-        [{"low": 0}, {"slow": 0}, {"low": 0}],
-        [{"moderate": 0}, {"slow": 0}, {"low": 0}],
-        [{"high": 0}, {"slow": 0}, {"moderate": 0}],
-        [{"very high": 0}, {"slow": 0}, {"high": 0}],
-        [{"low": 0}, {"moderate": 0}, {"free": 0}],
-        [{"moderate": 0}, {"moderate": 0}, {"low": 0}],
-        [{"high": 0}, {"moderate": 0}, {"moderate": 0}],
-        [{"very high": 0}, {"moderate": 0}, {"moderate": 0}],
-        [{"low": 0}, {"fast": 0}, {"free": 0}],
-        [{"moderate": 0}, {"fast": 0}, {"free": 0}],
-        [{"high": 0}, {"fast": 0}, {"low": 0}],
-        [{"very high": 0}, {"fast": 0}, {"moderate": 0}]
-    ]
+
     # last 2 index of dictionary denotes the funtion to be used 1 for
     # trapezoid and 0 for triangular
     velocitySet = {
@@ -41,6 +24,24 @@ class TrafficCongestion:
         pass
 
     def getRules(self):
+        self.rules = [
+            [{"low": 0}, {"very slow": 0}, {"low": 0}],
+            [{"moderate": 0}, {"very slow": 0}, {"moderate": 0}],
+            [{"high": 0}, {"very slow": 0}, {"high": 0}],
+            [{"very high": 0}, {"very slow": 0}, {"high": 0}],
+            [{"low": 0}, {"slow": 0}, {"low": 0}],
+            [{"moderate": 0}, {"slow": 0}, {"low": 0}],
+            [{"high": 0}, {"slow": 0}, {"moderate": 0}],
+            [{"very high": 0}, {"slow": 0}, {"high": 0}],
+            [{"low": 0}, {"moderate": 0}, {"free": 0}],
+            [{"moderate": 0}, {"moderate": 0}, {"low": 0}],
+            [{"high": 0}, {"moderate": 0}, {"moderate": 0}],
+            [{"very high": 0}, {"moderate": 0}, {"moderate": 0}],
+            [{"low": 0}, {"fast": 0}, {"free": 0}],
+            [{"moderate": 0}, {"fast": 0}, {"free": 0}],
+            [{"high": 0}, {"fast": 0}, {"low": 0}],
+            [{"very high": 0}, {"fast": 0}, {"moderate": 0}]
+        ]
         return self.rules
 
     def getVelocitySet(self):
