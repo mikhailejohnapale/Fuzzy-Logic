@@ -17,11 +17,16 @@ class Defuzzifier:
                              self.inference_result[key_infer])
                         divs = divs + self.inference_result[key_infer]
                         self.stat_lbl.append(key_infer)
-        self.crisp_output = '{0} ---->>> {1} - {2} '.format(
-            round((divn / divs), 2),
-            self.stat_lbl[0],
-            self.stat_lbl[
-                len(self.stat_lbl) - 1])
+        if len(self.stat_lbl) > 1:
+            self.crisp_output = '{0} ---->>> {1} - {2} '.format(
+                round((divn / divs), 2),
+                self.stat_lbl[0],
+                self.stat_lbl[
+                    len(self.stat_lbl) - 1])
+        else:
+            self.crisp_output = '{0} ---->>> {1}'.format(
+                round((divn / divs), 2),
+                self.stat_lbl[0])
         return self.crisp_output
 
     def getStatus_lbl(self):
