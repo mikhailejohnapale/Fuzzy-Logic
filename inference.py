@@ -24,4 +24,8 @@ class Inference:
             if self.rules[i][2][key[0]] != 0:
                 self.mamdaniResult.update({key[0]: self.rules[i][2][
                     key[0]]})
+        self.printValues()
         return self.mamdaniResult
+
+    def printValues(self):
+        print('Inference -->', self.mamdaniResult)

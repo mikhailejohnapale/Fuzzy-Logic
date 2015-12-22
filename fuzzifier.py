@@ -8,14 +8,16 @@ class Fuzzifier:
         # call detSubset and geTriMf and store it in fuzzy_val
         self.detSubset()
         self.getTriMf()
+        self.printValues()
         return self.fuzzy_val
 
     def detSubset(self):
         # scan  the fuzzy set and determine which subset the input belongs
         self.subset = {}
-        for a, b in self.label.items():
-            if self.crisp_input >= b[0] and self.crisp_input <= b[2]:
-                self.subset.update({a: b})
+        for key in self.label.keys():
+            if self.crisp_input >= self.label[key][
+                    0] and self.crisp_input <= self.label[key][2]:
+                self.subset.update({key: self.label[key]})
 
     def getTriMf(self):
         # (x = input,a,b,c) feet and peak
@@ -43,3 +45,8 @@ class Fuzzifier:
                                                             self.crisp_input) /
                                                            (b[2] - b[1]))), 0)
             self.fuzzy_val.update({a: round(value, 2)})
+
+    def printValues(self):
+        print('Input -->', self.crisp_input)
+        print('Subsets -->', self.subset)
+        print('Fuzzy value -->', self.fuzzy_val)

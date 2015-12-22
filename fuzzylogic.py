@@ -33,4 +33,11 @@ class FuzzyLogic:
 
         return self.ouput
 
-print(FuzzyLogic([0.8, 0.5]).getResult())
+a = '\n******'
+print(FuzzyLogic([0.5, 0.9]).getResult())
+print(a)
+print(FuzzyLogic([0.6, 0.5]).getResult())
+print(a)
+print(FuzzyLogic([0.7, 0.3]).getResult())
+print(a)
+print(FuzzyLogic([0.8, 0.0]).getResult())

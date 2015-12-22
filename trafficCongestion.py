@@ -30,11 +30,12 @@ class TrafficCongestion:
         "high": [0.4, 0.6, 0.8, 0, 0],
         "very high": [0.6, 0.8, 1, 1, 1]}
 
-    congestionSet = {
-        "free": [0, 0.2, 0.4],
-        "low": [0.2, 0.4, 0.6],
-        "moderate": [0.4, 0.6, 0.8],
-        "high": [0.6, 0.8, 1]}
+    congestionSet = [
+        [{"free": [0, 0.2, 0.4]}],
+        [{"low": [0.2, 0.4, 0.6]}],
+        [{"moderate": [0.4, 0.6, 0.8]}],
+        [{"high": [0.6, 0.8, 1]}]
+    ]
 
     def __init__(self):
         pass
