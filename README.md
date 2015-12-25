@@ -1,1 +1,1 @@
-# sample
+## Fuzzy Logic algorithm
