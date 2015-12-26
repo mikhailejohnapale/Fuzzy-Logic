@@ -25,4 +25,4 @@ class Test:
         for i in range(1000):
             print(Test.crispOutput(), '\n\n')
 
-Test.testOutput().
+Test.testOutput()
