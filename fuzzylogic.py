@@ -27,11 +27,14 @@ class FuzzyLogic:
             self.fuzzyVal,
             TrafficCongestion().getRules()).inferMamdani()
 
-        self.ouput = Defuzzifier(
+        output = Defuzzifier(
             TrafficCongestion().getCongestionSet(),
-            self.mamdaniResult).getCentroid()
+            self.mamdaniResult)
+        level = output.getLevel()
+        status = output.getStatus()
+        value = output.getValue()
 
-        return self.ouput
+        return level, status, value
 
     def getFuzzyValue(self):
         return self.fuzzyVal
