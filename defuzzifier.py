@@ -21,12 +21,15 @@ class Defuzzifier:
         if len(stat_lbl) > 1:
             self.crisp_output = divn / divs
             self.stat_output = stat_lbl[0], stat_lbl[len(stat_lbl) - 1]
+            self.stat = '{0} - {1}'.format(stat_lbl[0],
+                                           stat_lbl[len(stat_lbl) - 1])
         else:
             self.crisp_output = divn / divs
             self.stat_output = stat_lbl[0]
+            self.stat = '{0}'.format(stat_lbl[0])
 
     def getStatus(self):
-        return self.stat_output
+        return self.stat
 
     def getLevel(self):
         return self.crisp_output
