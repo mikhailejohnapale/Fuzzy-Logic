@@ -19,10 +19,10 @@ class Defuzzifier:
                         divs = divs + self.inference_result[key_infer]
                         stat_lbl.append(key_infer)
         if len(stat_lbl) > 1:
-            self.crisp_output = round((divn / divs), 2),
+            self.crisp_output = divn / divs
             self.stat_output = stat_lbl[0], stat_lbl[len(stat_lbl) - 1]
         else:
-            self.crisp_output = round((divn / divs), 2),
+            self.crisp_output = divn / divs
             self.stat_output = stat_lbl[0]
 
     def getStatus(self):
