@@ -9,9 +9,12 @@ class Test:
         velocity = random.choice([x / 10 for x in range(0, 11, 1)])
         print('Density = ', density, 'Velocity = ', velocity)
         ins = FuzzyLogic([density, velocity])
-        a = ins.getResult()
-        Test.fuzzyValue(ins.getFuzzyValue())
-        Test.mamdaniRslt(ins.getMamdaniResult())
+        if density == 0 and velocity == 0:
+            a = ins.getResult()
+        else:
+            a = ins.getResult()
+            Test.fuzzyValue(ins.getFuzzyValue())
+            Test.mamdaniRslt(ins.getMamdaniResult())
         return a
 
     def fuzzyValue(fuzzy_val):
